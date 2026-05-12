@@ -1,0 +1,319 @@
+
+@import "tailwindcss";
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+  --color-custom-blue: #89C1FD;
+  --color-custom-purple: #D6ABF5;
+  --color-custom-lavender: #B5BDEE;
+  --color-custom-peach: #FFBDAF;
+  --color-custom-yellow: #F3EDA6;
+  --color-text-dark: #0B1D7D;
+  /* COLORS */
+  --color-primary-fixed: #c9b6ff;
+  --color-surface-container-highest: #e7e0eb;
+  --color-tertiary-fixed-dim: #ef909c;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-fixed-dim: #89e1f8;
+  --color-on-error-container: #68001f;
+  --color-secondary-container: #acedff;
+  --color-surface-container-high: #ece6ef;
+  --color-on-tertiary-fixed: #440817;
+  --color-on-tertiary: #fff7f7;
+  --color-secondary-fixed: #acedff;
+  --color-inverse-primary: #b095ff;
+  --color-tertiary-fixed: #fe9da9;
+  --color-on-secondary-fixed-variant: #006576;
+  --color-secondary-dim: #005b6c;
+  --color-on-tertiary-container: #621f2c;
+  --color-on-background: #343139;
+  --color-on-primary-fixed: #2e0877;
+  --color-inverse-surface: #0f0e11;
+  --color-inverse-on-surface: #a09ba1;
+  --color-on-primary-fixed-variant: #4d3295;
+  --color-outline: #7d7982;
+  --color-error: #ac3149;
+  --color-background: #fdf8fd;
+  --color-on-tertiary-fixed-variant: #6d2834;
+  --color-tertiary-dim: #863b47;
+  --color-on-secondary: #effbff;
+  --color-on-secondary-container: #005a6a;
+  --color-on-primary-container: #44278c;
+  --color-error-container: #f76a80;
+  --color-primary-fixed-dim: #bca6ff;
+  --color-on-secondary-fixed: #004653;
+  --color-surface-container: #f2ecf4;
+  --color-on-surface-variant: #615d66;
+  --color-tertiary: #944752;
+  --color-surface-bright: #fdf8fd;
+  --color-primary: #8A70D6;
+  --color-outline-variant: #b5b0ba;
+  --color-error-dim: #770326;
+  --color-on-error: #fff7f7;
+  --color-on-surface: #343139;
+  --color-surface-variant: #e7e0eb;
+  --color-surface: #fdf8fd;
+  --color-primary-container: #c9b6ff;
+  --color-surface-container-low: #f8f2f9;
+  --color-secondary: #00687b;
+  --color-surface-dim: #ded8e3;
+  --color-surface-tint: #8A70D6;
+  --color-on-primary: #fdf7ff;
+  --color-tertiary-container: #fe9da9;
+  --color-primary-dim: #674db1;
+
+  /* RADIUS */
+  --radius: 9999px;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* FONT */
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+}
+
+/* =========================
+   TAILWIND THEME MAP
+========================= */
+@theme inline {
+/*  */
+  --color-custom-blue: var(--color-custom-blue);
+  --color-custom-purple: var(--color-custom-purple);
+  --color-custom-lavender: var(--color-custom-lavender);
+  --color-custom-peach: var(--color-custom-peach);
+  --color-custom-yellow: var(--color-custom-yellow);
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-on-background);
+
+  --font-sans: var(--font-body);
+
+  --radius: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+  --color-primary: rgb(138 112 214 / var(--tw-bg-opacity, 1));
+  --color-on-primary:  #ffffff
+}
+
+
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf8fd; color: #343139; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .hero-gradient { background: linear-gradient(135deg, #8A70D6 0%, #c9b6ff 100%); }
+        .tonal-layer { background-color: #f8f2f9; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Swiper Pagination Custom */
+
+.swiper-pagination-bullet {
+  width: 12px!important;
+  height: 5px!important;
+  border-radius: 0!important;
+  background: #d1d5db; /* màu inactive */
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #8A70D6!important; /* primary của bạn */
+  width: 24px!important; /* active dài hơn */
+}
+.swiper-horizontal .swiper-button-next{
+  display: none!important;
+}
+.swiper-horizontal .swiper-button-prev{
+  display: none!important;
+}
+
+.testimonial-slide {
+  transition: all 0.4s ease;
+  opacity: 0.4;
+  transform: scale(0.85);
+}
+
+.swiper-slide-active.testimonial-slide {
+  opacity: 1;
+  transform: scale(1.15);
+  z-index: 10;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(12);
+  }
+}
+
+.animate-ripple {
+  animation: ripple 600ms linear;
+}
+.swiper-pagination{
+  bottom: 10px !important;
+}
+.swiper-pagination {
+ --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 3px;
+  --swiper-pagination-bullet-border-radius: 4px;
+  --swiper-pagination-bullet-inactive-color: black;
+  --swiper-pagination-color: #2563eb;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb;
+  transform: scale(1.2);
+}
+
+
+/* ================= CTA BUTTON ================= */
+
+.cta-btn {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  animation: ctaBounce 2.5s infinite;
+  transition: transform 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.15);
+}
+
+/* RUN / BOUNCE */
+@keyframes ctaBounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* RING EFFECT */
+.cta-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  opacity: 0.5;
+  animation: ctaPing 2s infinite;
+}
+
+@keyframes ctaPing {
+  0% {
+    transform: scale(1);
+    opacity: .6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-zoom {
+  animation: zoomPulse 2s ease-in-out infinite;
+}
+
+
+/* width thanh cuộn */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* nền scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* thanh kéo */
+::-webkit-scrollbar-thumb {
+  background: rgb(138 112 214);
+  border-radius: 999px;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(120 90 200);
+}
+.text-multi-color {
+  background: linear-gradient(to right, var(--color-custom-blue), var(--color-custom-purple), var(--color-custom-lavender), var(--color-custom-peach), var(--color-custom-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  /* display: inline-block; */
+}
+
+.hover-text-multi-color:hover{
+  color:white;
+}
+.button-multi-gradient {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.button-multi-gradient:hover {
+  background: linear-gradient(135deg, var(--color-custom-blue) 0%, var(--color-custom-purple) 25%, var(--color-custom-lavender) 50%, var(--color-custom-peach) 75%, var(--color-custom-yellow) 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(138, 112, 214, 0.4);
+  color: white;
+}
+.bg-multi-gradient {
+  background: linear-gradient(135deg, var(--color-custom-blue) 0%, var(--color-custom-purple) 25%, var(--color-custom-lavender) 50%, var(--color-custom-peach) 75%, var(--color-custom-yellow) 100%);
+}
+.hover-bg-multi-gradient:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-custom-blue) 0%,
+    var(--color-custom-purple) 25%,
+    var(--color-custom-lavender) 50%,
+    var(--color-custom-peach) 75%,
+    var(--color-custom-yellow) 100%
+  );
+}
+.border-multi-gradient {
+  border: 2px solid transparent;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(transparent, transparent) padding-box,
+    linear-gradient(
+      135deg,
+      var(--color-custom-blue),
+      var(--color-custom-purple),
+      var(--color-custom-lavender),
+      var(--color-custom-peach),
+      var(--color-custom-yellow)
+    ) border-box;
+}
