@@ -62,7 +62,7 @@ const PACKAGES: Package[] = [
       "Trải nghiệm test trực tiếp layout makeup phù hợp",
     ],
     link:
-      "https://www.fresha.com/vi/a/sac-viet-personal-color-ha-noi-van-mieu-quoc-tu-giam-18a-pho-ngo-tat-to-snghrt49/booking?offerItems=sv%3A26598885&pId=2808945&cartId=f0d2bdd2-8b04-4967-9fd3-07c7bb58f6cf",
+      "https://www.fresha.com/vi/a/sac-viet-personal-color-ha-noi-van-mieu-quoc-tu-giam-18a-pho-ngo-tat-to-snghrt49/booking?offerItems=sv%3A27168319&pId=2808945&cartId=fb017080-6780-4e19-a078-387d19f6f90a",
   },
 
   {
@@ -96,7 +96,7 @@ const PACKAGES: Package[] = [
       "Xây dựng outfit theo từng hoàn cảnh",
     ],
     link:
-      "https://www.fresha.com/vi/a/sac-viet-personal-color-ha-noi-van-mieu-quoc-tu-giam-18a-pho-ngo-tat-to-snghrt49/booking",
+      "https://www.fresha.com/vi/a/sac-viet-personal-color-ha-noi-van-mieu-quoc-tu-giam-18a-pho-ngo-tat-to-snghrt49/booking?cartId=0d8e5f11-4e47-40bf-a826-7d5acf6852d1",
   },
 ];
 export default function PricingSection() {
