@@ -63,7 +63,7 @@ export default function Footer() {
           </h4>
 
           <p className="text-white/80 mb-4">
-            Văn Miếu – Quốc Tử Giám, 18A Phố Ngô Tất Tố, Hà Nội
+            340 Đê la Thành, Ô Chợ Dừa, Hà Nội, Việt Nam
 
 
           </p>
@@ -75,7 +75,7 @@ export default function Footer() {
             Email: sacvietatelier@gmail.com
           </p>
 
-          
+
         </div>
       </div>
 
