@@ -63,7 +63,7 @@ export default function Footer() {
           </h4>
 
           <p className="text-white/80 mb-4">
-            340 Đê la Thành, Ô Chợ Dừa, Hà Nội, Việt Nam
+            340 Đê la Thành, Ô Chợ Dừa, Hà Nội
 
 
           </p>
